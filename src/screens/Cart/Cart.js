@@ -77,7 +77,7 @@ const Carte = () => {
   const customMarkers = (marker ,index,scaleStyle)=>{
     if(marker.genre == 'Concert') {
       return(
-        <Image source={CNMARKER} style={[selectedMarkerIndex === index ? styles.markerTapped : styles.marker, scaleStyle]} resizeMode="contain" />
+        <Image source={CNMARKER} style={[selectedMarkerIndex === index ? styles.markerTapped : styles.marker, scaleStyle]} resizeMode="cover" />
       )
     }
     else if(marker.genre == 'Festival'){
@@ -97,26 +97,17 @@ const Carte = () => {
     }
    
   }
-
-  
-
   return (
     <View>
       <MapView.Animated
         onPress={() => bs.current.snapTo(0)}
         ref={_map}
-        // region={{
-        //   latitude: location.coords.latitude,
-        //   longitude: location.coords.longitude,
-        //   longitudeDelta: delta.longitudeDelta,
-        //   latitudeDelta: delta.latitudeDelta,
-        // }}
-          region={{
-          latitude: 46.227638,
-          longitude: 2.213749,
-          longitudeDelta: 12,
-          latitudeDelta: 12,
-         }}
+        region={{
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+          longitudeDelta: delta.longitudeDelta,
+          latitudeDelta: delta.latitudeDelta,
+        }}
         initialRegion={{
           latitude: 46.227638,
           longitude: 2.213749,
@@ -167,7 +158,7 @@ const Carte = () => {
                 </View>
           </Marker>
 
-          //Previous orders
+          //Previous Markers rendered
             // <Marker
             //   key={marker.id}
             //   calloutOffset={{ x: 0, y: 0 }}
@@ -334,8 +325,8 @@ const styles = StyleSheet.create({
     height: 42,
   },
   markerTapped: {
-    width: 39,
-    height: 72,
+    width: 29,
+    height: 52,
   },
   separatorLigne: {
     marginHorizontal: 10,

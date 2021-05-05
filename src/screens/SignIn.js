@@ -11,8 +11,8 @@ import LineAuth from "../components/Separator/LineAuth";
 
 const SignIn = ({ navigation }) => {
   const { signIn, signInWithGoogleAsync, setUser, setEventsLiked } = useContext(AuthContext);
-  const [email, setEmail] = useState("test@hotmail.fr");
-  const [password, setPassword] = useState("ipod.touch");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
   return (

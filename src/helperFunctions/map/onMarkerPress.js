@@ -19,7 +19,7 @@ export const onMarkerPress = ({
   });
   const filteredSameAddresses = sameAddress.filter((item) => item !== undefined);
 
-  if (filteredSameAddresses.length > 1) {
+  if (filteredSameAddresses.length >= 1) {
     setModalVisible(true);
     setIdentiquesId(filteredSameAddresses);
   } else {

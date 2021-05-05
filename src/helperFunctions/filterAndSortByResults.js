@@ -6,10 +6,8 @@ export const filterAndSortByResults = (results, location, callback) => {
   const finalResults = resultsWithLocation.map((item) => {
     const distance = getDistance(
       {
-        // latitude: location.coords.latitude, // current location of the user
-        // longitude: location.coords.longitude,
-         latitude: 48.83870845, // moked to france location of the user
-        longitude: 2.37876662,
+        latitude: location.coords.latitude, // current location of the user
+        longitude: location.coords.longitude,
       },
       { latitude: item.latitude, longitude: item.longitude } // Location of the event
     );
